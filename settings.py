@@ -1,0 +1,4 @@
+BOT_TOKEN = "8014699150:AAGCv098wTf8ZWvVC8xE1U0mp9SBXr2LPUQ"
+TG_API_ID = 29751945
+TG_API_HASH = "4bf0d79c4eab9bfc88f9368bf250031a"
+WEBAPP_URL = "https://portals-sniper-bot.onrender.com"
