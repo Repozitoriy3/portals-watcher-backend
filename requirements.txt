@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+python-telegram-bot
+telethon
+httpx
+sqlalchemy
+aiosqlite
+pydantic
