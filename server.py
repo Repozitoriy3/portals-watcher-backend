@@ -1,6 +1,25 @@
 import os
 import logging
 from threading import Thread
+
+_started = False
+def start_background_once():
+    global _started
+    if _started:
+        return
+    _started = True
+    Thread(target=run_bot, daemon=True).start()
+    # если есть монитор — тоже запускай здесь в отдельном потоке
+
+@app.before_first_request
+def _kickoff():
+    start_background_once()
+
+if __name__ == "__main__":
+    start_background_once()
+    port = int(os.environ.get("PORT", "10000"))
+    app.run(host="0.0.0.0", port=port)
+
 from flask import Flask, request
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
