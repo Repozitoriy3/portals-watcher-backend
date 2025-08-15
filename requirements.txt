@@ -9,3 +9,6 @@ pydantic
 Flask==3.0.0
 python-telegram-bot==20.3
 httpx==0.27.2
+aportalsmp==1.1.0
+aiosqlite==0.20.0
+
