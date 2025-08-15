@@ -1,15 +1,9 @@
-fastapi
-uvicorn
-python-telegram-bot
-telethon
-httpx
-sqlalchemy
-aiosqlite
-pydantic
 Flask==3.0.0
 python-telegram-bot==20.7
 httpx==0.25.2
 aiosqlite==0.20.0
 aportalsmp==1.1.0
+gunicorn==21.2.0
+
 
 
