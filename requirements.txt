@@ -6,4 +6,6 @@ httpx
 sqlalchemy
 aiosqlite
 pydantic
-flask
+Flask==3.0.0
+python-telegram-bot==20.3
+httpx==0.27.2
