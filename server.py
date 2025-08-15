@@ -107,14 +107,13 @@ def start_background_once():
     Thread(target=run_bot, daemon=True).start()
     # если есть монитор — добавь здесь второй Thread(...)
 
-# под Gunicorn фон стартуем перед первым HTTP-запросом
-@app.before_first_request
-def _kickoff():
-    start_background_once()
+# Запускаем фоновые потоки при импортe под Gunicorn (workers=1 — безопасно)
+start_background_once()
 
 # локальный запуск / простой сервер на Render
 if __name__ == "__main__":
-    start_background_once()
+    # локальный запуск
     port = int(os.environ.get("PORT", "10000"))
-    log.info(f"HTTP on 0.0.0.0:{port}")
+    logging.getLogger("portals-bot").info(f"HTTP on 0.0.0.0:{port}")
     app.run(host="0.0.0.0", port=port)
+
