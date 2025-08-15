@@ -93,7 +93,6 @@ async def cmd_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Привет! Жми кнопку и добавляй отслеживания.", reply_markup=kb)
 
 def run_bot():
-    log.info("Starting Telegram polling…")
     application = ApplicationBuilder().token(BOT_TOKEN).build()
     application.add_handler(CommandHandler("start", cmd_start))
     application.run_polling(close_loop=False)
