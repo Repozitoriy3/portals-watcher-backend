@@ -12,8 +12,9 @@ logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("portals-bot")
 
 # ---------- конфиг из ENV ----------
-BOT_TOKEN   = os.environ["BOT_TOKEN"]
-WEBAPP_URL  = os.environ.get("WEBAPP_URL", "https://example.com/webapp")
+# вместо BOT_TOKEN = os.environ["BOT_TOKEN"] и т.п.:
+from settings import BOT_TOKEN, WEBAPP_URL, POLL_SECONDS, DB_PATH, TG_API_ID, TG_API_HASH
+
 
 # ---------- Flask: СОЗДАЁМ app СРАЗУ ----------
 app = Flask(__name__)
